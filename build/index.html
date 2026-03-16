@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/webp" href="/images/pfp.webp">
     <link rel="preload" href="/fonts/Calistoga-Regular.ttf" as="font" type="font/ttf" crossorigin>
-	<link rel="preload" href="/fonts/Quicksand-Semibold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/Quicksand-Semibold.ttf" as="font" type="font/ttf" crossorigin>
     <title>Aktr0s - My Website</title>
     <style>
         html, body {
@@ -63,8 +63,6 @@
     </style>
 </head>
 <script type="module">
-	if ('WebAssembly' in window){
-	console.log("WebAssembly is supported!");
     const CLAY_RENDER_COMMAND_TYPE_NONE = 0;
     const CLAY_RENDER_COMMAND_TYPE_RECTANGLE = 1;
     const CLAY_RENDER_COMMAND_TYPE_BORDER = 2;
@@ -786,11 +784,6 @@
         window.dKeyPressedThisFrame = false;
     }
     init();
-	} else {
-		const script = document.createElement('script');
-		script.src = 'fallback.js';
-		document.body.appendChild(script);
-	}
 </script>
 <body>
 </body>

@@ -31,6 +31,7 @@ const Clay_Color COLOR_TOP_BORDER_3 = (Clay_Color) {185,70,67, 255};
 const Clay_Color COLOR_TOP_BORDER_4 = (Clay_Color) {214, 125, 62, 255};
 const Clay_Color COLOR_TOP_BORDER_5 = (Clay_Color) {232,177,137, 255};
 
+
 #define RAYLIB_VECTOR2_TO_CLAY_VECTOR2(vector) (Clay_Vector2) { .x = (vector).x, .y = (vector).y }
 
 Clay_TextElementConfig headerTextConfig = (Clay_TextElementConfig) { .fontId = 2, .fontSize = 24, .textColor = {61, 26, 5, 255} };
@@ -46,9 +47,9 @@ void LandingPage(DeviceType type, bool flick){
         CLAY(CLAY_ID("LandingPage1Desktop"), CLAY_LAYOUT({ .sizing = { .width = CLAY_SIZING_GROW(0), .height = CLAY_SIZING_FIT(.min = windowHeight - 70) }, .childAlignment = {.y = CLAY_ALIGN_Y_CENTER}, .padding = {50,50,0,0} })) {
             CLAY(CLAY_ID("LandingPage1"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_GROW(0) }, .childAlignment = {.y = CLAY_ALIGN_Y_CENTER}, .padding = { 32,32,32, 32 }, .childGap = 32 }), CLAY_BORDER({ .left = { 2, COLOR_RED }, .right = { 2, COLOR_RED } })) {
                 CLAY(CLAY_ID("LeftText"), CLAY_LAYOUT({ .sizing = { .width = CLAY_SIZING_PERCENT(0.55f) }, .layoutDirection = CLAY_TOP_TO_BOTTOM, .childGap = 8 })) {
-                    CLAY_TEXT(CLAY_STRING("Hi, and welcome to my site! I'm a retro tech and electronics enthusiast, primarily programming in Java and C, with a passion for the obscure."), CLAY_TEXT_CONFIG({ .fontSize = 56, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_RED }));
+                    CLAY_TEXT(CLAY_STRING("Hi, and welcome to my site! I'm a retro tech and electronics enthusiast, primarily programming in Java and C. Sometimes i have wierd ideas :P"), CLAY_TEXT_CONFIG({ .fontSize = 56, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_RED }));
                     CLAY(CLAY_ID("LandingPageSpacer"), CLAY_LAYOUT({ .sizing = { .width = CLAY_SIZING_GROW(0), .height = CLAY_SIZING_FIXED(32) } })) {}
-                    CLAY_TEXT(CLAY_STRING("> Go ahead, scroll down and see for yourself!"), CLAY_TEXT_CONFIG({ .fontSize = 36, .fontId = FONT_ID_TITLE_36, .textColor = COLOR_ORANGE }));
+                    CLAY_TEXT(CLAY_STRING("> Scroll down and see for yourself!"), CLAY_TEXT_CONFIG({ .fontSize = 36, .fontId = FONT_ID_TITLE_36, .textColor = COLOR_ORANGE }));
                     if (blink) {
                         CLAY_TEXT(CLAY_STRING("> _"), CLAY_TEXT_CONFIG({ .fontSize = 36, .fontId = FONT_ID_TITLE_36, .textColor = COLOR_ORANGE }));
                     } else {
@@ -63,9 +64,9 @@ void LandingPage(DeviceType type, bool flick){
     } else if (type == MOBILE) {
         CLAY(CLAY_ID("LandingPage1Mobile"), CLAY_LAYOUT({ .layoutDirection = CLAY_TOP_TO_BOTTOM, .sizing = { .width = CLAY_SIZING_GROW(0), .height = CLAY_SIZING_FIT(.min = windowHeight - 70) }, .childAlignment = {CLAY_ALIGN_X_CENTER, .y = CLAY_ALIGN_Y_CENTER}, .padding = { 16,16,32, 32 }, .childGap = 32 })) {
             CLAY(CLAY_ID("LeftText"), CLAY_LAYOUT({ .sizing = { .width = CLAY_SIZING_GROW(0) }, .layoutDirection = CLAY_TOP_TO_BOTTOM, .childGap = 8 })) {
-                CLAY_TEXT(CLAY_STRING("Hi, and welcome to my site! I'm a retro tech and electronics enthusiast, primarily programming in Java and C, with a passion for the obscure."), CLAY_TEXT_CONFIG({ .fontSize = 48, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_RED }));
+                CLAY_TEXT(CLAY_STRING("Hi, and welcome to my site! I'm a retro tech and electronics enthusiast, primarily programming in Java and C. Sometimes i have wierd ideas :P"), CLAY_TEXT_CONFIG({ .fontSize = 48, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_RED }));
                 CLAY(CLAY_ID("LandingPageSpacer"), CLAY_LAYOUT({ .sizing = { .width = CLAY_SIZING_GROW(0), .height = CLAY_SIZING_FIXED(32) } })) {}
-                CLAY_TEXT(CLAY_STRING("> Go ahead, scroll down and see for yourself!"), CLAY_TEXT_CONFIG({ .fontSize = 36, .fontId = FONT_ID_TITLE_36, .textColor = COLOR_ORANGE }));
+                CLAY_TEXT(CLAY_STRING("> Scroll down and see for yourself!"), CLAY_TEXT_CONFIG({ .fontSize = 36, .fontId = FONT_ID_TITLE_36, .textColor = COLOR_ORANGE }));
                     if (blink) {
                         CLAY_TEXT(CLAY_STRING("> _"), CLAY_TEXT_CONFIG({ .fontSize = 36, .fontId = FONT_ID_TITLE_36, .textColor = COLOR_ORANGE }));
                     } else {
@@ -88,18 +89,18 @@ void WelcomingBlocks(DeviceType type){
                 Clay_TextElementConfig *textConfig = CLAY_TEXT_CONFIG({ .fontSize = 24, .fontId = FONT_ID_BODY_24, .textColor = COLOR_RED });
                 CLAY(CLAY_ID("TextBoxOuter"), CLAY_LAYOUT({ .layoutDirection = CLAY_TOP_TO_BOTTOM, .sizing = { CLAY_SIZING_PERCENT(0.5f) }, .childAlignment = {0, CLAY_ALIGN_Y_CENTER}, .padding = {50,50,32, 32}, .childGap = 8 })) {
                     CLAY(CLAY_ID("TextOuter1"), CLAY_LAYOUT({ .padding = {8,8,4, 4} }), CLAY_RECTANGLE({ .color = COLOR_BLUE, .cornerRadius = CLAY_CORNER_RADIUS(8) })) {
-                        CLAY_TEXT(CLAY_STRING("Here, Look!"), CLAY_TEXT_CONFIG({ .fontSize = 24, .fontId = FONT_ID_BODY_24, .textColor = COLOR_LIGHT }));
+                        CLAY_TEXT(CLAY_STRING("About me."), CLAY_TEXT_CONFIG({ .fontSize = 24, .fontId = FONT_ID_BODY_24, .textColor = COLOR_LIGHT }));
                     }
                     CLAY_TEXT(CLAY_STRING("I love retro tech — old computers, learning how to switch 1B!ts0 & $Byt3s to make things work."), textConfig);
-                    CLAY_TEXT(CLAY_STRING("I also adore physical storage media:"), textConfig);
-                    CLAY_TEXT(CLAY_STRING("MO disks, floppy disks, CDs (yes, they’re considered obsolete :<), and tape drives. You got it!"), textConfig);
+                    CLAY_TEXT(CLAY_STRING("I also have interest in old, extrodinary media:"), textConfig);
+                    CLAY_TEXT(CLAY_STRING("MO disks, floppy disks, CDs, and Tapes etc..."), textConfig);
                 }
                 CLAY(CLAY_ID("AboutGithubOuter"), CLAY_LAYOUT({ .layoutDirection = CLAY_TOP_TO_BOTTOM, .sizing = { CLAY_SIZING_PERCENT(0.5f) }, .childAlignment = {0, CLAY_ALIGN_Y_CENTER}, .padding = {50,50,32,32}, .childGap = 8 })) {
                     CLAY(CLAY_ID("TextOuter2"), CLAY_LAYOUT({ .padding = {8,8,4, 4} }), CLAY_RECTANGLE({ .color = COLOR_BLUE, .cornerRadius = CLAY_CORNER_RADIUS(8) })) {
                         CLAY_TEXT(CLAY_STRING("About my Projects."), CLAY_TEXT_CONFIG({ .fontSize = 24, .fontId = FONT_ID_BODY_24, .textColor = COLOR_LIGHT }));
                     }
                     CLAY_TEXT(CLAY_STRING("Below are some of my lil' projects I decided to make public."), textConfig);
-                    CLAY_TEXT(CLAY_STRING("I'm not very advanced in programming (at least in my opinion), \nso please don’t judge them too harshly — they’re just for fun and learning."), textConfig);
+                    CLAY_TEXT(CLAY_STRING("Most of them are just ideas out of the blue but eventually made them real. Please don't judge them too harshly - they're mostly for fun"), textConfig);
                 }
             }
         }
@@ -111,23 +112,58 @@ void WelcomingBlocks(DeviceType type){
                     CLAY_TEXT(CLAY_STRING("Here, Look!"), CLAY_TEXT_CONFIG({ .fontSize = 24, .fontId = FONT_ID_BODY_24, .textColor = COLOR_LIGHT }));
                 }
                 CLAY_TEXT(CLAY_STRING("I love retro tech — old computers, learning how to switch 1B!ts0 & $Byt3s to make things work."), textConfig);
-                CLAY_TEXT(CLAY_STRING("I also adore physical storage media:"), textConfig);
-                CLAY_TEXT(CLAY_STRING("MO disks, floppy disks, CDs (yes, they’re considered obsolete :<), and tape drives. You got it!"), textConfig);
+                CLAY_TEXT(CLAY_STRING("I also have interest in old, extrodinary media:"), textConfig);
+                CLAY_TEXT(CLAY_STRING("MO disks, floppy disks, CDs, and Tapes etc..."), textConfig);
             }
             CLAY(CLAY_ID("AboutGithubOuter"), CLAY_LAYOUT({ .layoutDirection = CLAY_TOP_TO_BOTTOM, .sizing = { CLAY_SIZING_GROW(0) }, .childAlignment = {0, CLAY_ALIGN_Y_CENTER}, .padding = {16, 16, 32, 32}, .childGap = 8 })) {
                 CLAY(CLAY_ID("TextOuter2"), CLAY_LAYOUT({ .padding = {8,8,4, 4} }), CLAY_RECTANGLE({ .color = COLOR_BLUE, .cornerRadius = CLAY_CORNER_RADIUS(8) })) {
                     CLAY_TEXT(CLAY_STRING("About my Projects."), CLAY_TEXT_CONFIG({ .fontSize = 24, .fontId = FONT_ID_BODY_24, .textColor = COLOR_LIGHT }));
                 }
                 CLAY_TEXT(CLAY_STRING("Below are some of my lil' projects I decided to make public."), textConfig);
-                CLAY_TEXT(CLAY_STRING("I'm not very advanced in programming (at least in my opinion), \nso please don’t judge them too harshly — they’re just for fun and learning."), textConfig);
+                CLAY_TEXT(CLAY_STRING("Most of them are just ideas out of the blue but eventually made them real. Please don't judge them too harshly - they're mostly for fun"), textConfig);
             }
         }
     }
 }
 
 
+void Sun6502Page(DeviceType type) {
+    if (type == DESKTOP) {
+        CLAY(CLAY_ID("Sun6502PageDesktop"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_FIT(.min = windowHeight - 50) }, .childAlignment = {0, CLAY_ALIGN_Y_CENTER}, .padding = {50,50,0,0} })) {
+            CLAY(CLAY_ID("Sun6502Page"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_GROW(0) }, .childAlignment = { 0, CLAY_ALIGN_Y_CENTER }, .padding = { 32,32,32, 32 }, .childGap = 32 }), CLAY_BORDER({ .left = { 2, COLOR_RED }, .right = { 2, COLOR_RED } })) {
+                CLAY(CLAY_ID("Sun6502PageLeftText"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_PERCENT(0.5) }, .layoutDirection = CLAY_TOP_TO_BOTTOM, .childGap = 8 })) {
+                    CLAY_TEXT(CLAY_STRING("Sun6502: Hobby 65c02 Computer"), CLAY_TEXT_CONFIG({ .fontSize = 52, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_RED }));
+                    CLAY(CLAY_ID("Sun6502PageSpacer"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 16) } })) {}
+                    CLAY_TEXT(CLAY_STRING("After watching Ben Eater's videos on the 6502 processor. I tried making my own computer based on 6502 processor"), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_RED }));
+                    CLAY_TEXT(CLAY_STRING("Same CPU was in the Commodore 64. I did succeed and made a working prototype. I modified BIOS and MS BASIC to add some more functionality."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_RED }));
+                    CLAY_TEXT(CLAY_STRING("This project was a great learning experience and helped me understand the fundamentals of computer architecture and electronics."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_RED }));
+                    CLAY(CLAY_ID("LinkSun6502Outer"), CLAY_LAYOUT(), CLAY_RECTANGLE({ .link = CLAY_STRING("https://github.com/aktr0s/Sun6502"), .color = {0,0,0,0} })) {
+                        CLAY_TEXT(CLAY_STRING("Click here to check github page."), CLAY_TEXT_CONFIG({ .disablePointerEvents = true, .fontId = FONT_ID_BODY_24, .fontSize = 24, .textColor = COLOR_ORANGE }));
+                    }
+                }
+                CLAY(CLAY_ID("Sun6502PageImageSpacer"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0) } })) {}
+                CLAY(CLAY_ID("Sun6502PageRightImage"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_PERCENT(0.5) }, .childAlignment = {.x = CLAY_ALIGN_X_CENTER} })) {
+                    CLAY(CLAY_ID("Sun6502PageRightImageInner"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 619) } }), CLAY_IMAGE({ .sourceDimensions = {730, 619}, .sourceURL = CLAY_STRING("/images/SUN6502_web.webp") })) {}
+                }
+            }
+        }
+    } else if (type == MOBILE) {
+        CLAY(CLAY_ID("Sun6502PageMobile"), CLAY_LAYOUT({ .layoutDirection = CLAY_TOP_TO_BOTTOM, .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_FIT(.min = windowHeight - 50) }, .childAlignment = {CLAY_ALIGN_X_CENTER, CLAY_ALIGN_Y_CENTER}, .padding = {16,16,32, 32}, .childGap = 16 })) {
+            CLAY(CLAY_ID("Sun6502PageLeftText"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0) }, .layoutDirection = CLAY_TOP_TO_BOTTOM, .childGap = 8 })) {
+                CLAY_TEXT(CLAY_STRING("Sun6502: Hobby 65c02 Computer"), CLAY_TEXT_CONFIG({ .fontSize = 48, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_RED }));
+                CLAY(CLAY_ID("Sun6502PageSpacer"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 16) } })) {}
+                CLAY_TEXT(CLAY_STRING("After watching Ben Eater's videos on the 6502 processor. I tried making my own computer based on 6502 processor"), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_RED }));
+                CLAY_TEXT(CLAY_STRING("Same CPU was in the Commodore 64. I did succeed and made a working prototype. I modified BIOS and MS BASIC to add some more functionality."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_RED }));
+                CLAY_TEXT(CLAY_STRING("This project was a great learning experience and helped me understand the fundamentals of computer architecture and electronics."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_RED }));
+            }
+            CLAY(CLAY_ID("Sun6502PageRightImage"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 400) }, .childAlignment = {.x = CLAY_ALIGN_X_CENTER} })) {
+                CLAY(CLAY_ID("Sun6502PageRightImageInner"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 619) } }), CLAY_IMAGE({ .sourceDimensions = {730, 619}, .sourceURL = CLAY_STRING("/images/SUN6502_web.webp") } )) {}
+            }
+        }
+    }
+}
 
-
+/*
 void DungeonMixPage(DeviceType type) {
     if (type == DESKTOP) {
         CLAY(CLAY_ID("DungeonMixPageDesktop"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_FIT(.min = windowHeight - 50) }, .childAlignment = {0, CLAY_ALIGN_Y_CENTER}, .padding = {50,50,0,0} })) {
@@ -163,6 +199,7 @@ void DungeonMixPage(DeviceType type) {
         }
     }
 }
+OLD, taken down.
 
 void LCNPage(DeviceType type){
     if (type == DESKTOP) {
@@ -197,6 +234,49 @@ void LCNPage(DeviceType type){
             }
             CLAY(CLAY_ID("LCNPageRightImage"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0) }, .childAlignment = {.x = CLAY_ALIGN_X_CENTER} })) {
                 CLAY(CLAY_ID("LCNPageRightImageInner"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 568) } }), CLAY_IMAGE({ .sourceDimensions = {845, 503}, .sourceURL = CLAY_STRING("/images/lcn.webp") } )) {}
+            }
+        }
+    }
+}
+Old, taken down.
+*/
+
+
+void LuminovaPage(DeviceType type){
+    if (type == DESKTOP) {
+        CLAY(CLAY_ID("LuminovaPageDesktop"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_FIT(.min = windowHeight - 50) }, .childAlignment = {0, CLAY_ALIGN_Y_CENTER}, .padding = {50,50,0,0} }),CLAY_RECTANGLE({ .color = COLOR_RED })) {
+            CLAY(CLAY_ID("LuminovaPage"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_GROW(0) }, .childAlignment = { 0, CLAY_ALIGN_Y_CENTER }, .padding = { 32,32,32, 32 }, .childGap = 32 }), CLAY_BORDER({ .left = { 2, COLOR_LIGHT }, .right = { 2, COLOR_LIGHT } })) {
+                CLAY(CLAY_ID("LuminovaPageLeftImage"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_PERCENT(0.5) }, .layoutDirection = CLAY_TOP_TO_BOTTOM, .childGap = 8 })) {
+                        CLAY(CLAY_ID("LuminovaPageLeftImageInner"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0) } }), CLAY_IMAGE({ .sourceDimensions = {2024, 1480}, .sourceURL = CLAY_STRING("/images/luminova_web.webp") } )) {}
+                }
+                CLAY(CLAY_ID("LuminovaPageRightText"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_PERCENT(0.50) },.layoutDirection = CLAY_TOP_TO_BOTTOM, .childGap = 8 })) {
+                    CLAY_TEXT(CLAY_STRING("Luminova: Image Pixel Sorter"), CLAY_TEXT_CONFIG({ .fontSize = 52, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_LIGHT }));
+                    CLAY(CLAY_ID("LuminovaSpacer"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 16) } })) {}
+                    CLAY_TEXT(CLAY_STRING("I saw a video 'Pixel-Sorting' by Acerola on YouTube. It was about a GPU shader that sorts pixels live and creates a great looking video."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                    CLAY_TEXT(CLAY_STRING("I needed some app to write using JavaFX so this is what I came up with. A program that will sort pixels in an image then save it."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                    CLAY_TEXT(CLAY_STRING("The app allows you to make a cool 'glitchy' looking images or even animated GIFs. You can tweak almost anything."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                    CLAY_TEXT(CLAY_STRING("This is my first such advanced project. But i think effect is great!"), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                    CLAY_TEXT(CLAY_STRING("Name comes from word Luminance and Supernova, hence the name Luminova."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                    CLAY(CLAY_ID("LinkLuminovaOuter"), CLAY_LAYOUT(), CLAY_RECTANGLE({ .link = CLAY_STRING("https://github.com/aktr0s/Luminova"), .color = {0,0,0,0} })) {
+                        CLAY_TEXT(CLAY_STRING("Click here to check github page."), CLAY_TEXT_CONFIG({ .disablePointerEvents = true, .fontId = FONT_ID_BODY_24, .fontSize = 24, .textColor = COLOR_ORANGE }));
+                    }
+
+                }
+            }
+        }
+    } else if (type == MOBILE) {
+        CLAY(CLAY_ID("LuminovaPageMobile"), CLAY_LAYOUT({ .layoutDirection = CLAY_TOP_TO_BOTTOM, .sizing = { CLAY_SIZING_GROW(0), CLAY_SIZING_FIT(.min = windowHeight - 50) }, .childAlignment = {CLAY_ALIGN_X_CENTER, CLAY_ALIGN_Y_CENTER}, .padding = {16,16,32, 32}, .childGap = 16 }),CLAY_RECTANGLE({ .color = COLOR_RED})) {
+            CLAY(CLAY_ID("LuminovaPageLeftText"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0) }, .layoutDirection = CLAY_TOP_TO_BOTTOM, .childGap = 8 })) {
+                CLAY_TEXT(CLAY_STRING("Luminova: Image Pixel Sorter"), CLAY_TEXT_CONFIG({ .fontSize = 48, .fontId = FONT_ID_TITLE_56, .textColor = COLOR_LIGHT }));
+                CLAY(CLAY_ID("LuminovaPageSpacer"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 16) } })) {}
+                CLAY_TEXT(CLAY_STRING("I saw a video 'Pixel-Sorting' by Acerola on YouTube. It was about a GPU shader that sorts pixels live and creates a great looking video."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                CLAY_TEXT(CLAY_STRING("I needed some app to write using JavaFX so this is what I came up with. A program that will sort pixels in an image then save it."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                CLAY_TEXT(CLAY_STRING("The app allows you to make a cool 'glitchy' looking images or even animated GIFs. You can tweak almost anything."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                CLAY_TEXT(CLAY_STRING("This is my first such advanced project. But i think effect is great!"), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+                CLAY_TEXT(CLAY_STRING("Name comes from word Luminance and Supernova, hence the name Luminova."), CLAY_TEXT_CONFIG({ .fontSize = 28, .fontId = FONT_ID_BODY_36, .textColor = COLOR_LIGHT }));
+            }
+            CLAY(CLAY_ID("LuminovaPageRightImage"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(0) }, .childAlignment = {.x = CLAY_ALIGN_X_CENTER} })) {
+                CLAY(CLAY_ID("LuminovaPageRightImageInner"), CLAY_LAYOUT({ .sizing = { CLAY_SIZING_GROW(.max = 568) } }), CLAY_IMAGE({ .sourceDimensions = {2024, 1480}, .sourceURL = CLAY_STRING("/images/luminova_web.webp") } )) {}
             }
         }
     }
@@ -308,15 +388,19 @@ Clay_RenderCommandArray CreateLayout(bool mobileScreen, bool blink) {
             if (mobileScreen) {
                 LandingPage(MOBILE, blink);
                 WelcomingBlocks(MOBILE);
-                DungeonMixPage(MOBILE);
-                LCNPage(MOBILE);
+                //DungeonMixPage(MOBILE);
+                Sun6502Page(MOBILE);
+                //LCNPage(MOBILE);
+                LuminovaPage(MOBILE);
                 NixiePage(MOBILE);
                 CreditBlock(MOBILE);
             } else {
                 LandingPage(DESKTOP, blink);
                 WelcomingBlocks(DESKTOP);
-                DungeonMixPage(DESKTOP);
-                LCNPage(DESKTOP);
+                //DungeonMixPage(DESKTOP);
+                Sun6502Page(DESKTOP);
+                //LCNPage(DESKTOP);
+                LuminovaPage(DESKTOP);
                 NixiePage(DESKTOP);
                 CreditBlock(DESKTOP);
             }
