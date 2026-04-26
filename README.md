@@ -1,4 +1,4 @@
-# aktr0s-clay-website
+# aktr0site-clay
 
 ### My website about myself and my projects.
 ### Done using CLAY and the design HEAVILY inspired by Nic Barker Clay Webside Example.
